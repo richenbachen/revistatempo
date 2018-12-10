@@ -1,0 +1,134 @@
+-- ****************** SqlDBM: MySQL ******************;
+-- ***************************************************;
+
+
+-- ************************************** `gender`
+
+CREATE TABLE `gender`
+(
+ `gender_id`   smallint(6) NOT NULL ,
+ `gender_name` varchar(30) ,
+PRIMARY KEY (`gender_id`)
+) ENGINE=INNODB;
+
+
+
+
+
+
+-- ************************************** `article`
+
+CREATE TABLE `article`
+(
+ `article_id`       int(11) NOT NULL ,
+ `article_title`    longtext ,
+ `header_image_id`  int(11) ,
+ `article_subtitle` longtext ,
+ `autor_id`         int(11) ,
+ `article_`          ,
+PRIMARY KEY (`article_id`)
+);
+
+
+
+
+
+  -- ****************** SqlDBM: MySQL ******************;
+-- ***************************************************;
+
+
+-- ************************************** `session_status`
+
+CREATE TABLE `session_status`
+(
+ `session_status_id`         int(11) NOT NULL ,
+ `session_staus_description` varchar(20) ,
+ `session_staus_name`        varchar(300) ,
+PRIMARY KEY (`session_status_id`)
+) ENGINE=INNODB;
+
+
+
+
+
+
+-- ************************************** `session_history`
+
+CREATE TABLE `session_history`
+(
+ `session_id`             bigint(20) NOT NULL ,
+ `session_start_datetime` datetime ,
+ `session_end_datetime`   datetime ,
+ `user_id`                int(11) ,
+ `session_staus_id`       int(11) ,
+PRIMARY KEY (`session_id`)
+) ENGINE=INNODB;
+
+
+
+
+
+-- ****************** SqlDBM: MySQL ******************;
+-- ***************************************************;
+
+
+-- ************************************** `user_role`
+
+CREATE TABLE `user_role`
+(
+ `user_role_id`         smallint(6) NOT NULL ,
+ `user_role_name`       varchar(30) ,
+ `user_rol_description` varbinary(300) ,
+PRIMARY KEY (`user_role_id`)
+) ENGINE=INNODB;
+
+
+
+
+
+
+-- ************************************** `user`
+
+CREATE TABLE `user`
+(
+ `user_id`                         int(11) NOT NULL AUTO_INCREMENT ,
+ `user_password`                   varchar(45) NOT NULL ,
+ `user_role_id`                    smallint ,
+ `user_first_name`                 varchar(45) ,
+ `user_middle_name`                varchar(45) ,
+ `user_last_name`                  varchar(45) ,
+ `user_full_name`                  varchar(45) ,
+ `user_short_name`                 varchar(45) ,
+ `user_email`                      varchar(254) ,
+ `user_email_verified_ind`         int(11) ,
+ `gender_id`                       smallint(6) ,
+ `user_picture_path`               varchar(260) ,
+ `user_creation_datetime`          datetime ,
+ `user_last_sesion_start_datetime` datetime ,
+ `user_status_id`                  smallint(6) ,
+ `country_id`                      int(11) ,
+PRIMARY KEY (`user_id`)
+) ENGINE=INNODB;
+
+
+
+
+
+-- ****************** SqlDBM: MySQL ******************;
+-- ***************************************************;
+
+
+-- ************************************** `user_status`
+
+CREATE TABLE `user_status`
+(
+ `user_status_id`          smallint(6) NOT NULL ,
+ `user_status_name`        varchar(30) ,
+ `user_status_description` varchar(300) ,
+PRIMARY KEY (`user_status_id`)
+) ENGINE=INNODB;
+
+
+
+
+
